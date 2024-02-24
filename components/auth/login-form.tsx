@@ -47,26 +47,14 @@ export const LoginForm = () => {
         setError("");
         setSuccess("");
 
-        console.log(values);
-        // startTransition(() => {
-        //     login(values, callbackUrl)
-        //         .then((data: any) => {
-        //             if (data?.error) {
-        //                 form.reset();
-        //                 setError(data.error);
-        //             }
-
-        //             if (data?.success) {
-        //                 form.reset();
-        //                 setSuccess(data.success);
-        //             }
-
-        //             if (data?.twoFactor) {
-        //                 setShowTwoFactor(true);
-        //             }
-        //         })
-        //         .catch(() => setError("Something went wrong"));
-        // });
+        // console.log(values);
+        startTransition(() => {
+            login(values)
+                .then((data: any) => {
+                    setError(data.error);
+                    setSuccess(data.success);
+                });
+        });
     };
 
     return (
