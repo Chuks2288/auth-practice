@@ -35,6 +35,7 @@ export const Navbar = () => {
                     <Button
                         asChild
                         variant={pathname === link.path ? "default" : "outline"}
+                        key={link.title}
                     >
                         <Link href={link.path}>
                             {link.title}
