@@ -9,7 +9,6 @@ import { UserButton } from "@/components/auth/user-button";
 export const Navbar = () => {
     const pathname = usePathname();
 
-
     const navbarLinks = [
         {
             title: "Server",
@@ -37,7 +36,7 @@ export const Navbar = () => {
                         asChild
                         variant={pathname === link.path ? "default" : "outline"}
                     >
-                        <Link href="/server">
+                        <Link href={link.path}>
                             {link.title}
                         </Link>
                     </Button>
